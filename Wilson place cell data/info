@@ -1,0 +1,30 @@
+https://cbmm.mit.edu/learning-hub/tools-datasets/decoding-hippocampal-place-cell-data
+
+S=scipy.io.loadmat('DataWilson.mat')
+
+S = {k:v for k, v in S.items() if k[0] != '_'}
+data = pd.DataFrame({k: pd.Series(v[0]) for k, v in S.items()})
+pos = data.loc[:,'AnimalPosition']
+time = data.loc[:,'TimestampPosition']
+spikesT1_column = data.loc[:,'SpikeTimesTrial1']
+spikesT2_column = data.loc[:,'SpikeTimesTrial2']
+spikesT3_column = data.loc[:,'SpikeTimesTrial3']
+spike_times = np.empty(0)
+for s in spikesT1_column:
+  if hasattr(s, "__len__"):
+    for q in s:
+      if hasattr(s, "__len__"):
+        spike_times = np.append(spike_times, q[0])
+for s in spikesT2_column:
+  if hasattr(s, "__len__"):
+    for q in s:
+      if hasattr(s, "__len__"):
+        spike_times = np.append(spike_times, q[0])
+for s in spikesT3_column:
+  if hasattr(s, "__len__"):
+    for q in s:
+      if hasattr(s, "__len__"):
+        spike_times = np.append(spike_times, q[0])
+
+df_spikes = pd.DataFrame({'spike_times':spike_times})
+df_position = pd.DataFrame({'position':pos,'time':time})
