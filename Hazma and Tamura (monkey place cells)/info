@@ -1,0 +1,5 @@
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6745530/
+
+doi: 10.1016/j.dib.2019.104467
+
+The present data set contains spike-timestamps of 18 place cells recorded in the right hippocampal CA1 subfield of a male Japanese monkey performing a shuttling task on a rectangular (4 × 0.9 m) track, and his sequential positions on it. The monkey was monitored by a CCD camera every 33.3 ms, and his position as a pixel (a pixel size: 0.9 × 0.9 cm) on the track was determined from the image. These data are freely accessible [2]. Each spike-timestamp file has one column showing the timestamp (in ms) when the place cell fired during the task (time 0 corresponds to the onset of a task trial). Each position file has three columns: the sequential frame numbers of the CCD camera images are shown in the first column, the x-positions (1 and 440 correspond to the west-end and east-end pixels, respectively, of the track) in the second column, and the y-positions (1 and 99 correspond to the south-end and north-end pixels, respectively, of the track) in the third column. 
