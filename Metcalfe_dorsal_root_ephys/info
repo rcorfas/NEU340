@@ -3,3 +3,16 @@ Metcalfe, Benjamin (2020), “Action potentials recorded from the L5 dorsal root
 https://www.sciencedirect.com/science/article/pii/S2352340920314438#tbl0001
 
 https://data.mendeley.com/datasets/ybhwtngzmm/1
+
+# process data to make a small usable chunk
+time = data['time (s)']
+ch1 = data['channel5']
+
+start = 18000
+end =   30000
+
+t = np.array(time[start:end])
+t = t*2000 # adjust to make APs ~1ms
+V = np.array(ch1[start:end])
+V = V*220 # adjust to make APs from -65 to +40mV
+V = V-60 # adjust to make APs from -65 to +40mV
