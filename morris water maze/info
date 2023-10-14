@@ -1,0 +1,23 @@
+from mike mauk
+
+data = np.genfromtxt('MWMdata\\cohort 1\\coords07.02',delimiter=',') # read a csv file into np array
+#data = np.genfromtxt('MWMdata/cohort 1/coords07.02',delimiter=',') # mac version
+xy = data.shape # this gives the number of rows and columns in data file
+
+numPoints = xy[0] # column length is the number of swim observations taken per data file
+
+times = data[:,0]  # this is the time (in seconds) of each observation, starting from 0.0
+xCoord = data[:,1] # these are x and y coordinates of mouse at each observation
+yCoord = data[:,2] # these are x and y coordinates of mouse at each observation
+swim = data[:,3]   # this is the cummulative swim distance at each observation
+numPoints = len(times) # the number of observations taken per data file
+
+swimDistance = swim[len(swim)-1] # last data point is total swim distance
+swimTime = times[len(times)-1]   # last data point is total swim time
+
+print(swimTime,swimDistance) # print swim time and swim distance
+plt.figure(figsize=(5,5))    # plot trajectory of swim
+plt.xlim(55,305)             # the coordinants of the area appear to be 55 to 305 in x direction
+plt.ylim(0,250)              # and 0,250 in y direction
+plt.plot(xCoord,yCoord,linewidth=1)
+
