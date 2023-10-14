@@ -1,3 +1,9 @@
+Overall et al. data
+https://rupertoverall.net/Rtrack/articles/Rtrack_MWM_analysis.html
+https://figshare.com/articles/dataset/Water_maze_tracking_data/10248158/2
+(see scraps for code to convert json into dataframe)
+
+
 from mike mauk
 
 data = np.genfromtxt('MWMdata\\cohort 1\\coords07.02',delimiter=',') # read a csv file into np array
