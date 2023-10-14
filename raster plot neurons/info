@@ -1,0 +1,29 @@
+from mike mauk
+
+figureType = 1 # 1 = both, 2 = raster only, 3 = PSTH only
+# numpy way to read .csv file
+data = np.genfromtxt('Rasters\\Neuron2.csv',delimiter=',') # windows version
+#data = np.genfromtxt('Rasters/Neuron1.csv',delimiter=',') # mac/linux version
+
+# create a PSTH array with duplicate row values stripped away
+xy = data.shape # this gives the number of rows and columns in data file
+temp = data[0]   # row 1 of data array (first stimulus presentation)
+PSTH = np.unique(temp)  # strips away duplicate values
+for i in range(1,xy[0]): # now repeat for all rows in data
+    temp = data[i] # next row
+    temp2 = np.unique(temp) # remove duplicates
+    PSTH = np.hstack([PSTH,temp2]) # combine with rest of array
+# data array is for making raster plot
+# PSTH array is used to make PSTH
+if figureType ==1:
+    fig, axs = plt.subplots(2,1) # this is how to create a stacked plot
+    axs[0].hist(PSTH, bins = 200, edgecolor='blue') # the top plot
+    # and now the bottom plot
+    axs[1].eventplot(data, colors='black', lineoffsets=1,
+                        linelengths=2)
+elif figureType ==2:
+    plt.eventplot(data, colors='black', lineoffsets=1,
+                        linelengths=2)  
+elif figureType ==3:
+    plt.hist(PSTH, bins = 200, edgecolor='blue') # the top plot
+plt.show()
