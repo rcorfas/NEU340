@@ -12,3 +12,17 @@ plt.figure(figsize=(5,5))
 plt.xlim(80,570)
 plt.ylim(0,490)
 plt.plot(Xpos,Ypos,linewidth=1)
+
+These are three pairs of data files each pair involves a position file and a timestamps file. Here are the file formats:
+
+the position file is in csv format.
+
+Each row is a time when position and head direction were recorded.
+
+the four columns are: 0) timestamp in microseconds when position was recorded, 1) x position of the rat in the arena, 2) y position of rat in the arena and 3) direction of head (in degrees ranging from 0 to 290).
+
+The timestamps file is also csv, although there is only one column per row. Each row contains a timestamp in microseconds when the cell fired an action potential.
+
+Use these two files as we did in class to determine for each spike which direction the head was pointing. From this construct a frequency histogram where the x axis is head direction (in degrees) and the y axis is number of spikes fired for that head direction.  Repeat this for all three cells (grid, place and head). 
+
+Upload the figure of the frequency histogram from the cell whose activity looks most like it encodes direction of the head.
