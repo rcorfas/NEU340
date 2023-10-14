@@ -1,0 +1,14 @@
+From mike mauk
+
+
+data = np.genfromtxt('GridPlaceCells\\gridCellPosition.csv',delimiter=',')
+#data = np.genfromtxt('GridPlaceCells/gridCellPosition.csv',delimiter=',') # mac version
+
+timeStamps = data[:,0] # times that position is recorded
+Xpos = data[:,1] # the second column is x position data
+Ypos = data[:,2] # the third column is y position data
+headDirection = data[:,3] # fourth column is head direction data
+plt.figure(figsize=(5,5))
+plt.xlim(80,570)
+plt.ylim(0,490)
+plt.plot(Xpos,Ypos,linewidth=1)
