@@ -1,4 +1,4 @@
-band,species,"Beak length, mm","Beak depth, mm"
+bird ID,species,"Beak length, mm","Beak depth, mm"
 2,fortis,9.4,8
 9,fortis,9.2,8.3
 12,fortis,9.5,7.5
