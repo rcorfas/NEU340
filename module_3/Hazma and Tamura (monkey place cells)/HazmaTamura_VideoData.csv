@@ -1,4 +1,4 @@
-video frame (30Hz),xpos,ypos
+video frame (30Hz),xpos (cm),ypos (cm)
 1,96.3,8.1
 2,95.4,9.0
 3,95.4,11.700000000000001
